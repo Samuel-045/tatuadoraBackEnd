@@ -15,21 +15,14 @@ public class Pessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     long id;
-    @Column(name = "nome")
-    String nome;
     @Column(name = "senha")
     String senha;
-    @Column(name= "RG")
-    String rg;
     @Column(name = "CPF")
     String cpf;
-    @Column(name = "CNPJ")
-    String cnpj;
-    @Column(name = "IE")
-    String ie;
 
-    public Pessoa(String nome,String senha, String rg, String cpf, String cnpj, String ie) {
-
+    public Pessoa(String senha, String cpf) {
+        this.senha = senha;
+        this.cpf = cpf;
     }
 
     public Pessoa() {
