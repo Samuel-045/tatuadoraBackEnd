@@ -42,11 +42,11 @@ public class EstoqueController {
         return ResponseEntity.ok().body(produto);
     }
 
-   // @GetMapping(value = "/nomeId/{nome}")
-   // public ResponseEntity<Produto> buscaNomeId(@PathVariable long id){
-        //Produto produto = produtoService.
- //       return ResponseEntity.ok().body(produto);
-    //}terminar
+    @GetMapping(value = "/nomeId/{id}")
+    public ResponseEntity<Produto> buscaNomeId(@PathVariable long id){
+        Produto produto = produtoService.buscaId(id);
+        return ResponseEntity.ok().body(produto);
+    }
 
     @GetMapping(value = "/nomeParte/{nome}")
     public List <Produto> buscaParteNome(@PathVariable String nome){

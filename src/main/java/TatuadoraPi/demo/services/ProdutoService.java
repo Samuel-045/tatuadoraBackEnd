@@ -55,7 +55,7 @@ public class ProdutoService {
 
     public Produto buscaId(long id){
         Optional<Produto> produto = produtoRepositorio.findById(id);
-        return produto;
+        return produto.orElse(null);
     }
 
 }
